@@ -1,0 +1,6 @@
+<ng-container *ngIf="contents">
+  <li *ngFor="let content of contents">
+    <span>{{ content.name }}</span>
+    <ul app-note-bag *ngIf="content.children" [contents]="content.children"></ul>
+  </li>
+</ng-container>
