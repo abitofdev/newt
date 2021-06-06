@@ -1,18 +1,19 @@
 # Newt
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.3.
+## Setting up for development
 
-## Development server
+1. Clone the repo
+2. Run `npm install` to get download all dependencies
+3. Follow the setup steps on the [Tauri Documentation](https://tauri.studio/en/docs/getting-started/intro) site for your development platform
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Development
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1. Run `npm run start` to start the Angular dev server or you can press `ctrl+shift+b` if you're using VSCode.
+2. Run `npm run tauri dev` to start the Tauri dev server. This supports hot reloading so will update when you make changes to either Angular or the Tauri server.
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Run `npm run build:native` to build the project for native devices. The build artifacts can be found in the `src-tauri/target` folder.
 
 ## Running unit tests
 
@@ -21,7 +22,3 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 ## Running end-to-end tests
 
 Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
