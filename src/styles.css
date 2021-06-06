@@ -9,4 +9,5 @@
 body {
   background-color: var(--color-background-1);
   color: var(--color-text-1);
+  overflow-y: hidden;
 }

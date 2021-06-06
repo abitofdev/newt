@@ -1,3 +1,21 @@
+#app-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+#sidenav {
+  flex: 0 0 auto;
+  width: 400px;
+  height: 100%;
+  overflow-y: auto;
+  background-color: var(--color-background-2);
+}
+
+#main-content {
+  flex: 1;
+}
+
 .box {
   width: 100%;
   height: 200px;
