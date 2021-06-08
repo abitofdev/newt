@@ -1,1 +1,5 @@
-<ul app-note-bag [contents]="contents"></ul>
+<div id="notes-explorer">
+    <div class="explorer-list-item" *ngFor="let node of contents" [style.--level]="node.level">
+        {{node.name}}
+    </div>
+</div>
