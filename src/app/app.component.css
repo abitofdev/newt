@@ -1,7 +1,6 @@
 #app-container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
+  display: grid;
+  grid-template-columns: 400px minmax(0, 1fr);
   height: 100%;
   width: 100%;
 }

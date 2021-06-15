@@ -49,6 +49,11 @@
         "readBinaryFile": false,
         "readTextFile": false,
         "writeFile": false
+      },
+      "shell": {
+        "all": false,
+        "execute": false,
+        "open": true
       }
     },
     "windows": [

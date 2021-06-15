@@ -1,0 +1,46 @@
+.newt-editor .ql-container.ql-snow,
+.newt-editor .ql-toolbar.ql-snow {
+  border: none;
+}
+
+.newt-editor .toolbar.ql-toolbar .ql-picker .ql-picker-options {
+  background-color: black;
+  border: none;
+  border-radius: 9px;
+  margin-top: 3px;
+}
+
+.toolbar.ql-toolbar .ql-picker {
+  color: white;
+}
+
+.newt-editor .toolbar.ql-toolbar .ql-stroke {
+  stroke: white;
+}
+
+.newt-editor .toolbar.ql-toolbar .ql-fill {
+  fill: white;
+}
+
+.newt-editor .toolbar.ql-toolbar .ql-picker.ql-expanded .ql-picker-label {
+  background-color: black;
+  border-color: transparent;
+  border-radius: 3px;
+}
+
+.newt-editor .ql-snow .ql-editor pre.ql-syntax {
+  background-color: black;
+}
+
+.newt-editor .ql-snow .ql-picker.ql-header {
+  width: 100px;
+}
+
+.newt-editor .ql-container.ql-snow .ql-tooltip {
+  border: none;
+  background: black;
+  box-shadow: none;
+  border-radius: 28px;
+  color: white;
+  margin: 0px 10px;
+}
