@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Note } from '../interfaces/note.interface';
+import { Note } from '../models/note.interface';
 import { NativeBridgeService } from './native-bridge.service';
 
 @Injectable({
