@@ -1,6 +1,10 @@
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import Quill from 'quill';
+import Quill, { DeltaStatic } from 'quill';
 import hljs from 'highlight.js';
+import { IOService } from '../core/services/io.service';
+import { Observable } from 'rxjs';
+
+const Delta = Quill.import('delta');
 
 @Component({
   selector: 'app-editor',
@@ -12,11 +16,18 @@ export class EditorComponent implements OnInit, AfterViewInit {
 
   private _quill?: Quill;
 
-  constructor() {}
+  constructor(private readonly _io: IOService) {}
 
   ngOnInit(): void {
     // var icons = Quill.import('ui/icons');
     // icons['bold'] = '<span>B</span>';
+
+    this._io.loadNoteAsync().then((note) => {
+      if (note?.content) {
+        const newDelta = new Delta(note.content);
+        this._quill?.setContents(newDelta, 'api');
+      }
+    });
   }
 
   ngAfterViewInit() {
@@ -27,10 +38,28 @@ export class EditorComponent implements OnInit, AfterViewInit {
           syntax: {
             highlight: (text: string) => hljs.highlightAuto(text).value,
           },
+          history: {
+            delay: 1000,
+            maxStack: 500,
+            userOnly: true,
+          },
           toolbar: '.newt-editor .toolbar',
         },
         theme: 'snow',
       });
+
+      this.onTextChange().subscribe((x) => {
+        const delta = this._quill?.getContents().ops;
+        this._io.saveNoteAsync({ content: delta });
+      });
     }
+  }
+
+  private onTextChange(): Observable<DeltaStatic> {
+    return new Observable((observer) => {
+      this._quill?.on('text-change', (value) => {
+        observer.next(value);
+      });
+    });
   }
 }

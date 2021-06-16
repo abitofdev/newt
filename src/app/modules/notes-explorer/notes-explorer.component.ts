@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FileEntry } from '@tauri-apps/api/fs';
-import { NativeBridgeService } from '../global/native-bridge.service';
+import { NativeBridgeService } from '../core/services/native-bridge.service';
 
 interface NestedFileEntry extends FileEntry {
   level: number;

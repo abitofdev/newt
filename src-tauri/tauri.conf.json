@@ -47,8 +47,8 @@
       "fs": {
         "readDir": true,
         "readBinaryFile": false,
-        "readTextFile": false,
-        "writeFile": false
+        "readTextFile": true,
+        "writeFile": true
       },
       "shell": {
         "all": false,
