@@ -3,6 +3,8 @@ import Quill, { DeltaStatic } from 'quill';
 import hljs from 'highlight.js';
 import { IOService } from '../core/services/io.service';
 import { Observable } from 'rxjs';
+import { EditorService } from '../core/services/editor.service';
+import { SelectedNote } from '../core/models/selected-note';
 
 const Delta = Quill.import('delta');
 
@@ -15,17 +17,23 @@ export class EditorComponent implements OnInit, AfterViewInit {
   @ViewChild('editor') private _editorElement?: ElementRef;
 
   private _quill?: Quill;
+  private _selectedNote?: SelectedNote;
 
-  constructor(private readonly _io: IOService) {}
+  constructor(private readonly _io: IOService, private readonly _editorService: EditorService) {}
 
   ngOnInit(): void {
     // var icons = Quill.import('ui/icons');
     // icons['bold'] = '<span>B</span>';
 
-    this._io.loadNoteAsync().then((note) => {
-      if (note?.content) {
-        const newDelta = new Delta(note.content);
-        this._quill?.setContents(newDelta, 'api');
+    this._editorService.selectedNote$.subscribe((selectedNote) => {
+      this._selectedNote = selectedNote;
+      if (selectedNote) {
+        this._io.loadNoteAsync(selectedNote).then((note) => {
+          if (note?.content) {
+            const newDelta = new Delta(note.content);
+            this._quill?.setContents(newDelta, 'api');
+          }
+        });
       }
     });
   }
@@ -49,8 +57,10 @@ export class EditorComponent implements OnInit, AfterViewInit {
       });
 
       this.onTextChange().subscribe((x) => {
-        const delta = this._quill?.getContents().ops;
-        this._io.saveNoteAsync({ content: delta });
+        if (this._selectedNote) {
+          const delta = this._quill?.getContents().ops;
+          this._io.saveNoteAsync(this._selectedNote, { content: delta });
+        }
       });
     }
   }
