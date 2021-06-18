@@ -7,7 +7,7 @@ import { SelectedNote } from '../models/selected-note';
 @Injectable({
   providedIn: 'root',
 })
-export class EditorService {
+export class AppService {
   private readonly _selectedNote = new BehaviorSubject<SelectedNote | undefined>(undefined);
 
   constructor() {
