@@ -7,11 +7,24 @@
   min-width: 100%;
 }
 
+.utility-button {
+  height: 25px;
+  font-size: 14px;
+}
+
 .explorer-list-item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+
   white-space: nowrap;
   padding-left: calc(var(--level) * var(--indent));
 }
 
 .explorer-list-item:hover {
   background-color: deeppink;
+}
+
+.expand {
+  cursor: pointer;
+  user-select: none;
 }

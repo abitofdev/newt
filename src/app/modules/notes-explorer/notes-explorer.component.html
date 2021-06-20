@@ -1,5 +1,10 @@
 <div id="notes-explorer">
-    <div class="explorer-list-item" *ngFor="let node of contents" [style.--level]="node.level">
-        {{node.name}}
+  <ng-container  *ngFor="let node of contents" >
+    <div class="explorer-list-item" [style.--level]="node.level">
+      <span class="material-icons expand" *ngIf="node.hasChildren" (click)="expand(node)">
+        {{ node.isExpanded ? 'expand_more' : 'chevron_right' }}
+      </span>
+      <span>{{ node.name }}</span>
     </div>
+  </ng-container>
 </div>
