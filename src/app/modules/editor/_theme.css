@@ -11,15 +11,15 @@
 }
 
 .toolbar.ql-toolbar .ql-picker {
-  color: white;
+  color: var(--color-text-1);
 }
 
 .newt-editor .toolbar.ql-toolbar .ql-stroke {
-  stroke: white;
+  stroke: var(--color-text-1);
 }
 
 .newt-editor .toolbar.ql-toolbar .ql-fill {
-  fill: white;
+  fill: var(--color-text-1);
 }
 
 .newt-editor .toolbar.ql-toolbar .ql-picker.ql-expanded .ql-picker-label {
@@ -41,6 +41,6 @@
   background: black;
   box-shadow: none;
   border-radius: 28px;
-  color: white;
+  color:  var(--color-text-1);
   margin: 0px 10px;
 }
