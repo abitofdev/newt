@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { NativeBridgeService } from './modules/global/native-bridge.service';
 
 @Component({
   selector: 'app-root',
@@ -9,15 +8,10 @@ import { NativeBridgeService } from './modules/global/native-bridge.service';
 export class AppComponent implements OnInit {
   title = 'newt';
 
-  constructor(private readonly bridge: NativeBridgeService) {
+  constructor() {
     document.addEventListener('contextmenu', (event) => event.preventDefault());
   }
 
   ngOnInit() {
-    console.time('get files');
-    this.bridge.readDir('../').then((dirContents) => {
-      console.timeEnd('get files');
-      console.log(dirContents.map((d) => d.name));
-    });
   }
 }

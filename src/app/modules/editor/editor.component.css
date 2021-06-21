@@ -1,0 +1,19 @@
+:host {
+  --toolbar-height: 41px;
+}
+
+#editor-wrapper {
+  width: 100%;
+  height: 100%;
+  color: var(--color-text-1);
+  overflow: hidden;
+}
+
+.ql-container {
+  height: calc(100% - var(--toolbar-height));
+}
+
+.toolbar {
+  display: flex;
+  justify-content: center;
+}

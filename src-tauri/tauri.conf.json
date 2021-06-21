@@ -47,15 +47,20 @@
       "fs": {
         "readDir": true,
         "readBinaryFile": false,
-        "readTextFile": false,
-        "writeFile": false
+        "readTextFile": true,
+        "writeFile": true
+      },
+      "shell": {
+        "all": false,
+        "execute": false,
+        "open": true
       }
     },
     "windows": [
       {
         "title": "Newt",
-        "width": 800,
-        "height": 600,
+        "width": 1350,
+        "height": 850,
         "resizable": true,
         "fullscreen": false
       }

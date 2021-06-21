@@ -1,0 +1,17 @@
+:host {
+  --indent: 1.2em;
+}
+
+#notes-explorer {
+  width: max-content;
+  min-width: 100%;
+}
+
+.explorer-list-item {
+  white-space: nowrap;
+  padding-left: calc(var(--level) * var(--indent));
+}
+
+.explorer-list-item:hover {
+  background-color: deeppink;
+}
