@@ -15,7 +15,6 @@
 .explorer-list-item {
   display: grid;
   grid-template-columns: auto 1fr;
-
   white-space: nowrap;
   padding-left: calc(var(--level) * var(--indent));
 }
