@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FileEntry } from '@tauri-apps/api/fs';
+import { IOService } from '../core/services/io.service';
 import { NativeBridgeService } from '../core/services/native-bridge.service';
 import { OpenRootsService } from '../settings/open-roots.service';
 
@@ -15,12 +16,16 @@ interface NestedFileEntry extends FileEntry {
 export class NotesExplorerComponent implements OnInit {
   private _contents: NestedFileEntry[] = [];
 
-  constructor(private readonly _bridge: NativeBridgeService, private readonly _openRoots: OpenRootsService) {
-    this._openRoots.addAsync('c:\\temp\\root1').then(async () => {
+  constructor(
+    private readonly _bridge: NativeBridgeService,
+    private readonly _io: IOService,
+    private readonly _openRoots: OpenRootsService
+  ) {
+    this._openRoots.addAsync('c:\\temp\\', 'temp').then(async () => {
       const roots = await this._openRoots.getAllAsync();
-      console.log(roots);
+      const dir = await this._io.readRootDirectory(roots[0]);
+      console.log(dir);
     });
-    
   }
 
   ngOnInit(): void {
