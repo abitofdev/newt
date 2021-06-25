@@ -1,0 +1,9 @@
+.explorer-list-item {
+  padding-left: calc((var(--level) + 1) * var(--indent));
+}
+
+.explorer-list-item:hover {
+  background-color: deeppink;
+  cursor: pointer;
+  user-select: none;
+}

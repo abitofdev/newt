@@ -1,10 +1,9 @@
 <div id="notes-explorer">
-  <ng-container  *ngFor="let node of contents" >
-    <div class="explorer-list-item" [style.--level]="node.level">
-      <span class="material-icons expand" *ngIf="node.hasChildren" (click)="expand(node)">
-        {{ node.isExpanded ? 'expand_more' : 'chevron_right' }}
-      </span>
-      <span>{{ node.name }}</span>
+  <div *ngFor="let root of roots">
+    <div class="root-heading">
+      {{ root.name }}
     </div>
-  </ng-container>
+    <app-explorer-folder *ngFor="let folder of root.childFolders" [folder]="folder"> </app-explorer-folder>
+    <app-explorer-note *ngFor="let note of root.childNotes" [note]="note"> </app-explorer-note>
+  </div>
 </div>
