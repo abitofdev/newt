@@ -1,5 +1,7 @@
 .explorer-list-item {
   padding-left: calc((var(--level) + 1) * var(--indent));
+  display: flex;
+  gap: 4px;
 }
 
 .explorer-list-item:hover {

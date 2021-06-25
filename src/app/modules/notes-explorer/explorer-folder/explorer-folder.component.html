@@ -1,5 +1,5 @@
 <div *ngIf="folder">
-  <div class="explorer-list-item" [style.--level]="level" (click)="toggleExpanded()">
+  <div class="explorer-list-item" [style.--level]="level" (click)="toggleExpanded()" [class.expanded]="expanded">
     <app-icon name="folder"></app-icon>
     <span>{{ folder.name }}</span>
   </div>

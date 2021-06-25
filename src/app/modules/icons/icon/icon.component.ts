@@ -34,9 +34,9 @@ export class IconComponent implements OnInit, OnChanges {
 
   private buildClassList() {
     if (this.iconClass) {
-      this._classList = `${DEFAULT_ICON_CLASS_NAME} ${this.iconClass}`;
+      this._classList = `${DEFAULT_ICON_CLASS_NAME} ${this.name} ${this.iconClass}`;
     } else {
-      this._classList = DEFAULT_ICON_CLASS_NAME;
+      this._classList = `${DEFAULT_ICON_CLASS_NAME} ${this.name}`;
     }
   }
 }

@@ -1,0 +1,8 @@
+::ng-deep .app-icon.folder {
+  fill: #334154;
+  stroke: black;
+}
+
+.expanded ::ng-deep .app-icon.folder {
+  fill: var(--color-primary-1);
+}
