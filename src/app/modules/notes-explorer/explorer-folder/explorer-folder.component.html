@@ -1,6 +1,7 @@
 <div *ngIf="folder">
   <div class="explorer-list-item" [style.--level]="level" (click)="toggleExpanded()">
-    {{ folder.name }}
+    <app-icon name="folder"></app-icon>
+    <span>{{ folder.name }}</span>
   </div>
   <div [hidden]="!expanded">
     <app-explorer-folder *ngFor="let folder of folder.childFolders" [folder]="folder" [level]="level + 1">

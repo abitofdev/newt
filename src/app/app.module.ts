@@ -8,10 +8,19 @@ import { NativeBridgeService } from './modules/core/services/native-bridge.servi
 import { NotesExplorerModule } from './modules/notes-explorer/notes-explorer.module';
 import { SideNavModule } from './modules/side-nav/side-nav.module';
 import { SettingsModule } from './modules/settings/settings.module';
+import { IconsModule } from './modules/icons/icons.module';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule, NotesExplorerModule, SideNavModule, EditorModule, SettingsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    NotesExplorerModule,
+    SideNavModule,
+    EditorModule,
+    SettingsModule,
+    IconsModule,
+  ],
   providers: [NativeBridgeService],
   bootstrap: [AppComponent],
 })

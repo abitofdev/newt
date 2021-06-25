@@ -1,6 +1,7 @@
 @import './reset.css';
 @import './styles/variables.css';
 @import './app/modules/editor/_theme.css';
+@import './app/modules/icons/icon/_icon-style.css';
 @import '~quill/dist/quill.snow.css';
 
 * {

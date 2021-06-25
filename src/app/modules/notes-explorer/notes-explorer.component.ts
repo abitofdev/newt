@@ -12,11 +12,7 @@ export class NotesExplorerComponent implements OnInit {
   public _roots: DirectoryRoot[] = [];
 
   constructor(private readonly _io: IOService, private readonly _openRoots: OpenRootsService) {
-    // this._openRoots.addAsync('c:\\temp\\', 'temp').then(async () => {
-    //   const roots = await this._openRoots.getAllAsync();
-    //   const dir = await this._io.readRootDirectory(roots[0]);
-    //   console.log(dir);
-    // });
+    this._openRoots.addAsync('c:\\temp\\', 'temp');
   }
 
   ngOnInit(): void {
