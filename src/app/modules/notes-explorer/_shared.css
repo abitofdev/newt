@@ -9,3 +9,7 @@
   cursor: pointer;
   user-select: none;
 }
+
+.icon {
+  width: 16px;
+}

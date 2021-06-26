@@ -24,6 +24,10 @@ export class DirectoryFolder {
     return this._childNotes;
   }
 
+  public get hasContents() {
+    return (this._childFolders?.length ?? 0) > 0 || (this.childNotes?.length ?? 0) > 0;
+  }
+
   private computeChildren() {
     if (!this._children) {
       this._childFolders = undefined;

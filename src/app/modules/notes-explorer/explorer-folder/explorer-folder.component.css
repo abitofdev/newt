@@ -6,3 +6,11 @@
 .expanded ::ng-deep .app-icon.folder {
   fill: var(--color-primary-1);
 }
+
+.no-content {
+  display: flex;
+  padding-left: calc((var(--level) + 1) * var(--indent));
+  gap: 4px;
+  font-size: 80%;
+  color: darkgray;
+}

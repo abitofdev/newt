@@ -23,4 +23,8 @@ export class ExplorerFolderComponent implements OnInit {
   public get expanded() {
     return this._expanded;
   }
+
+  public get hasContent() {
+    return this.folder?.hasContents ?? false;
+  }
 }
