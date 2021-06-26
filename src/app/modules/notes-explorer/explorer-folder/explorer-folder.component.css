@@ -11,6 +11,5 @@
   display: flex;
   padding-left: calc((var(--level) + 1) * var(--indent));
   gap: 4px;
-  font-size: 80%;
-  color: darkgray;
+  color: var(--color-text-3);
 }

@@ -1,6 +1,7 @@
 .explorer-list-item {
   padding-left: calc((var(--level) + 1) * var(--indent));
   display: flex;
+  align-items: center;
   gap: 4px;
 }
 

@@ -5,7 +5,13 @@ const DEFAULT_ICON_CLASS_NAME = 'app-icon';
 @Component({
   selector: 'app-icon',
   template: `<svg-icon [src]="src" [svgClass]="classList"></svg-icon>`,
-  styles: [''],
+  styles: [
+    `
+      svg-icon {
+        display: flex;
+      }
+    `,
+  ],
   encapsulation: ViewEncapsulation.None,
 })
 export class IconComponent implements OnInit, OnChanges {
