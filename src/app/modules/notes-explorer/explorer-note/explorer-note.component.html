@@ -1,4 +1,4 @@
-<div class="explorer-list-item" [style.--level]="level">
+<div class="explorer-list-item" [style.--level]="level" (click)="selectNote()">
   <app-icon name="note" class="icon"></app-icon>
   <span>{{ note?.name }}</span>
 </div>

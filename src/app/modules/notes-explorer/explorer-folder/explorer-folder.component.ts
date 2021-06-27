@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { DirectoryFolder } from '../../core/models/directory-folder';
+import { DirectoryRoot } from '../../core/models/directory-root';
 
 @Component({
   selector: 'app-explorer-folder',
@@ -8,6 +9,7 @@ import { DirectoryFolder } from '../../core/models/directory-folder';
 })
 export class ExplorerFolderComponent implements OnInit {
   @Input() public folder?: DirectoryFolder;
+  @Input() public root?: DirectoryRoot;
   @Input() public level = 0;
 
   private _expanded: boolean = false;

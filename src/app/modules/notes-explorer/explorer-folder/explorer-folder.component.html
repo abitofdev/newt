@@ -4,9 +4,10 @@
     <span>{{ folder.name }}</span>
   </div>
   <div [hidden]="!expanded">
-    <app-explorer-folder *ngFor="let folder of folder.childFolders" [folder]="folder" [level]="level + 1">
+    <app-explorer-folder *ngFor="let folder of folder.childFolders" [folder]="folder" [root]="root" [level]="level + 1">
     </app-explorer-folder>
-    <app-explorer-note *ngFor="let note of folder.childNotes" [note]="note" [level]="level + 1"> </app-explorer-note>
+    <app-explorer-note *ngFor="let note of folder.childNotes" [note]="note" [folder]="folder" [root]="root" [level]="level + 1">
+    </app-explorer-note>
     <ng-container *ngIf="!hasContent; then noContent"></ng-container>
   </div>
 </div>

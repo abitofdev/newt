@@ -4,8 +4,8 @@
       {{ root.name }}
     </div>
     <div>
-      <app-explorer-folder *ngFor="let folder of root.childFolders" [folder]="folder"> </app-explorer-folder>
-      <app-explorer-note *ngFor="let note of root.childNotes" [note]="note"> </app-explorer-note>
+      <app-explorer-folder *ngFor="let folder of root.childFolders" [folder]="folder" [root]="root"> </app-explorer-folder>
+      <app-explorer-note *ngFor="let note of root.childNotes" [note]="note" [root]="root"> </app-explorer-note>
     </div>
   </div>
 </div>

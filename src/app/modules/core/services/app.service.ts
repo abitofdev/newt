@@ -18,6 +18,10 @@ export class AppService {
     this._selectedNote.next(new SelectedNote(root, folder, note));
   }
 
+  public selectNote(note: SelectedNote) {
+    this._selectedNote.next(note);
+  }
+
   public get selectedNote$() {
     return this._selectedNote.asObservable();
   }
